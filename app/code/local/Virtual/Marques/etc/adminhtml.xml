@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+
+<config>
+    <menu>
+        <virtual_marques translate="title" module="virtual_marques">
+            <title>Marques</title>
+            <sort_order>70</sort_order>
+            <children>
+                <marques_marque translate="title" module="virtual_marques">
+                    <title>Manage Marques</title>
+                    <action>adminhtml/marques_marque</action>
+                    <sort_order>0</sort_order>
+                </marques_marque>
+            </children>
+        </virtual_marques>
+    </menu>
+    <acl>
+        <resources>
+            <all>
+                <title>Allow Everything</title>
+            </all>
+            <admin>
+                <children>
+                    <virtual_marques>
+                        <children>
+                            <marques_marque translate="title" module="virtual_marques">
+                                <title>Manage Marques</title>
+                                <sort_order>0</sort_order>
+                            </marques_marque>
+                        </children>
+                    </virtual_marques>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <virtual translate="title" module="virtual_marques">
+                                        <title>Virtual Extensions</title>
+                                    </virtual>
+                                </children>
+                                <children>
+                                    <virtual_marques>
+                                        <title>Virtual Marques - General</title>
+                                    </virtual_marques>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

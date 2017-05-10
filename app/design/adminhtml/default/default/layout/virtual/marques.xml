@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<layout>
+    <!-- marqueR SLIDES -->
+    <adminhtml_marques_marque_index>
+        <reference name="content">
+            <block type="virtual_marques/adminhtml_marque" name="virtual_marques_adminhtml_marque"></block>
+        </reference>
+    </adminhtml_marques_marque_index>
+
+    <adminhtml_marques_marque_edit>
+        <reference name="content">
+            <block type="virtual_marques/adminhtml_marque_edit" name="virtual_marques_adminhtml_marque_edit"></block>
+        </reference>
+        <reference name="left">
+            <block type="virtual_marques/adminhtml_marque_edit_tabs" name="virtual_marques_adminhtml_marque_edit_tabs">
+                <block type="virtual_marques/adminhtml_marque_edit_tab_form" name="virtual_marques_adminhtml_marque_edit_tab_form" />
+                <action method="addTab">
+                    <name>main_section</name>
+                    <block>virtual_marques_adminhtml_marque_edit_tab_form</block>
+                </action>
+            </block>
+        </reference>
+    </adminhtml_marques_marque_edit>
+</layout>

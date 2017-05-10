@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <virtual_marques_index_index>
+
+        <reference name="content">
+            <block type="virtual_marques/marques"  name="virtual_marques.marques" template="virtual/marques.phtml" />
+        </reference>
+    </virtual_marques_index_index>
+</layout>
