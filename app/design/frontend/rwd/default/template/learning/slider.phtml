@@ -1,6 +1,10 @@
-<?php echo 'les slides :'; ?>
-
 <?php $slides = $this->getSlides(); ?>
-<?php foreach($slides as $slide): ?>
-  <?php echo $slide->getName() ?>
-<?php endforeach; ?>
+<ul class="bxslider">
+
+    <?php foreach ($slides as $slide): ?>
+        <li>
+            <img src="<?php echo Mage::helper('learning_slider')->getImageUrl($slide->getImageUrl()); ?>" title="<?php echo $slide->getName(); ?>">
+        </li>
+    <?php endforeach; ?>
+
+</ul>
