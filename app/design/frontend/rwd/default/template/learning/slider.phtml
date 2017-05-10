@@ -1,0 +1,6 @@
+<?php echo 'les slides :'; ?>
+
+<?php $slides = $this->getSlides(); ?>
+<?php foreach($slides as $slide): ?>
+  <?php echo $slide->getName() ?>
+<?php endforeach; ?>
