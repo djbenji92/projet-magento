@@ -73,6 +73,11 @@ class Virtual_Marques_Adminhtml_Marques_MarqueController extends Mage_Adminhtml_
 
             try {
                 $marque->addData($data);
+                
+                $products = $this->getRequest()->getPost('products', -1);
+                if ($products != -1) {
+                    $marque->setProductsData(Mage::helper('adminhtml/js')->decodeGridSerializedInput($products));
+                }
                 $marque->save();
 
                 Mage::getSingleton('adminhtml/session')->addSuccess(Mage::helper('virtual_marques')->__('The marque has been saved.'));
@@ -202,5 +207,27 @@ class Virtual_Marques_Adminhtml_Marques_MarqueController extends Mage_Adminhtml_
             $image = $model->getData($imageAttr);
         }
         return $image;
+    }
+
+    public function _initMarque()
+    {
+        $id = $this->getRequest()->getParam('id');
+        $marque = Mage::getModel('virtual_marques/marque')->load($id);
+        Mage::register('current_marque', $marque);
+    }
+
+    public function productsAction(){
+        $this->_initMarque(); //if you don't have such a method then replace it with something that will get you the entity you are editing.
+        $this->loadLayout();
+        $this->getLayout()->getBlock('marque.edit.tab.product')
+            ->setMarqueProducts($this->getRequest()->getPost('marque_products', null));
+        $this->renderLayout();
+    }
+    public function productsgridAction(){
+        $this->_initMarque();
+        $this->loadLayout();
+        $this->getLayout()->getBlock('marque.edit.tab.product')
+            ->setMarqueProducts($this->getRequest()->getPost('marque_products', null));
+        $this->renderLayout();
     }
 }

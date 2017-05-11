@@ -26,7 +26,7 @@ $table = $this->getConnection()
         'default'   => '0',
     ), 'Position')
     ->addIndex($this->getIdxName('virtual_marques/marque_product', array('marque_id')), array('product_id'))
-    ->addForeignKey($this->getFkName('virtual_marques/marque_product', 'marque_id', 'virtual_marques/marque', 'marque_id'), 'marque_id', $this->getTable('virtual_marques/marque'), 'marque_id', Varien_Db_Ddl_Table::ACTION_CASCADE, Varien_Db_Ddl_Table::ACTION_CASCADE)
+    ->addForeignKey($this->getFkName('virtual_marques/marque_product', 'marque_id', 'virtual_marques/marque', 'entity_id'), 'marque_id', $this->getTable('virtual_marques/marque'), 'entity_id', Varien_Db_Ddl_Table::ACTION_CASCADE, Varien_Db_Ddl_Table::ACTION_CASCADE)
     ->addForeignKey($this->getFkName('virtual_marques/marque_product', 'product_id', 'catalog/product', 'entity_id'),    'product_id', $this->getTable('catalog/product'), 'entity_id', Varien_Db_Ddl_Table::ACTION_CASCADE, Varien_Db_Ddl_Table::ACTION_CASCADE)
     ->setComment('Marque to Product Linkage Table');
 $this->getConnection()->createTable($table);

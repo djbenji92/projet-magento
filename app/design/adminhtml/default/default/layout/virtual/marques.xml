@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 
 <layout>
-    <!-- marqueR SLIDES -->
     <adminhtml_marques_marque_index>
         <reference name="content">
             <block type="virtual_marques/adminhtml_marque" name="virtual_marques_adminhtml_marque"></block>
@@ -22,4 +21,27 @@
             </block>
         </reference>
     </adminhtml_marques_marque_edit>
+    <adminhtml_marques_marque_products>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="virtual_marques/adminhtml_marque_edit_tab_product" name="marque.edit.tab.product"/>
+            <block type="adminhtml/widget_grid_serializer" name="product_grid_serializer">
+                <reference name="product_grid_serializer">
+                    <action method="initSerializerBlock">
+                        <grid_block_name>marque.edit.tab.product</grid_block_name>
+                            <data_callback>getSelectedProducts</data_callback>
+                            <hidden_input_name>products</hidden_input_name>
+                            <reload_param_name>marque_products</reload_param_name>
+                    </action>
+                    <action method="addColumnInputName">
+                        <input_name>position</input_name>
+                    </action>
+                </reference>
+            </block>
+        </block>
+    </adminhtml_marques_marque_products>
+    <adminhtml_marques_marque_productsgrid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="virtual_marques/adminhtml_marque_edit_tab_product" name="marque.edit.tab.product"/>
+        </block>
+    </adminhtml_marques_marque_productsgrid>
 </layout>

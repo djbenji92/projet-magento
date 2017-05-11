@@ -8,7 +8,7 @@ class Virtual_Marques_Model_Resource_Marque extends Mage_Core_Model_Resource_Db_
      */
     protected function _construct()
     {
-        $this->_init('virtual_marques/marque', 'marque_id');
+        $this->_init('virtual_marques/marque', 'entity_id');
     }
 
 }
