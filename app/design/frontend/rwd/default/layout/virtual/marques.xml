@@ -8,10 +8,10 @@
 
     </virtual_marques_index_index>
 
-    <virtual_marques_index_view>
+    <virtual_marques_marque_view>
         <reference name="content">
-            <block type="virtual_marques/marque_view" name="virtual_marques.marque_view" template="virtual_marques/marque_view.phtml" />
+            <block type="virtual_marques/marque_view" name="virtual_marques.marque_view" template="virtual/marque_view.phtml" />
         </reference>
-    </virtual_marques_index_view>
-    
+    </virtual_marques_marque_view>
+
 </layout>

@@ -19,13 +19,13 @@ class Virtual_Marques_IndexController extends Mage_Core_Controller_Front_Action
             $id = (int)$this->getRequest()->getParam('id', 0);
             $marque->load($id);
         }
-        
+
         if ($marque->getId() < 1) {
             $this->_redirect('*/*/index');
         }
-        
+
         Mage::register('marque_data', $marque);
-        
+
         $this->loadLayout()->renderLayout();
     }
 
