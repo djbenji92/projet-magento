@@ -213,7 +213,7 @@ class Virtual_Marques_Adminhtml_Marques_MarqueController extends Mage_Adminhtml_
     {
         $id = $this->getRequest()->getParam('id');
         $marque = Mage::getModel('virtual_marques/marque')->load($id);
-        Mage::register('current_marque', $marque);
+        Mage::register('marque_data', $marque);
     }
 
     public function productsAction(){

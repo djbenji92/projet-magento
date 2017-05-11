@@ -80,7 +80,7 @@ class Virtual_Marques_Block_Adminhtml_Marque_Edit_Tab_Product
     }
     public function getSelectedProducts() {
         $products = array();
-        $selected = Mage::registry('current_marque')->getSelectedProducts();
+        $selected = Mage::registry('marque_data')->getSelectedProducts();
         if (!is_array($selected)){
             $selected = array();
         }
@@ -98,7 +98,7 @@ class Virtual_Marques_Block_Adminhtml_Marque_Edit_Tab_Product
         ));
     }
     public function getMarque(){
-        return Mage::registry('current_marque');
+        return Mage::registry('marque_data');
     }
     protected function _addColumnFilterToCollection($column){
         // Set custom filter for in product flag

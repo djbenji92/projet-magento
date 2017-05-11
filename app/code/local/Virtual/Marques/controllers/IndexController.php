@@ -24,7 +24,7 @@ class Virtual_Marques_IndexController extends Mage_Core_Controller_Front_Action
             $this->_redirect('*/*/index');
         }
         
-        Mage::register('current_marque', $marque);
+        Mage::register('marque_data', $marque);
         
         $this->loadLayout()->renderLayout();
     }

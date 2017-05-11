@@ -3,7 +3,7 @@ class Virtual_Marques_Block_MarqueView extends Mage_Core_Block_Template
 {
     public function getCurrentMarque()
     {
-        return Mage::registry('current_marque');
+        return Mage::registry('marque_data');
     }
     
     public function getProductCollection()
