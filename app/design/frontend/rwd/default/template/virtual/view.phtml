@@ -1,6 +1,7 @@
 <?php $marque = $this->getCurrentMarque(); ?>
 
 <h1>Produits :</h1>
+<?php echo $marque; ?>
 
 <?php $productsAssociated = Mage::Helper("virtual_marques")->getProductsByMarque($marque->getId()); ?>
     <?php foreach ($productsAssociated as $asso): ?>
