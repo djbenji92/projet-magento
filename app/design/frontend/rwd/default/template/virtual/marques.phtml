@@ -6,6 +6,9 @@
             <a href="<?php echo $this->helper('virtual_marques/data')->getMarqueUrl($marque); ?>">
             	<img style="width:50%" src="<?php echo Mage::helper('virtual_marques')->getImageUrl($marque->getImageUrl()); ?>" title="<?php echo $marque->getName(); ?>">
             </a>
+            <a class="link button" target="_blank" href="<?php echo $this->helper('virtual_marques/data')->getMarqueUrl($marque); ?>">
+                    Produits associés
+                </a>
 
         </li>
     <?php endforeach; ?>

@@ -55,6 +55,13 @@ class Virtual_Marques_Block_Adminhtml_Marque_Grid extends Mage_Adminhtml_Block_W
             'width'   => '100px'
         ));
 
+        $this->addColumn('image_url', array(
+            'header' => $this->__('Image URL'),
+            'align'  => 'right',
+            'width'  => '100px',
+            'index'  => 'image_url'
+        ));
+
         $this->addColumn('position', array(
             'header' => $this->__('Position'),
             'align'  => 'right',
