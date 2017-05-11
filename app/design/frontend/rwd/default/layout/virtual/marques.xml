@@ -5,6 +5,18 @@
         <reference name="content">
             <block type="virtual_marques/marques"  name="virtual_marques.marques" template="virtual/marques.phtml" />
         </reference>
-        
+
     </virtual_marques_index_index>
+
+    <virtual_marques_index_view>
+        <reference name="content">
+            <block type="virtual_marques/marque_view" name="virtual_marques.marque_view" template="virtual_marques/marque_view.phtml" />
+        </reference>
+    </virtual_marques_index_view>
+    
+    <catalog_product_view>
+        <reference name="product.info">
+            <block type="virtual_marques/catalog_product_view_link" name="catalog.product.view.other.link" as="other" template="virtual_marques/catalog/product/view/link.phtml"/>
+        </reference>
+    </catalog_product_view>
 </layout>

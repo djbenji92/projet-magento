@@ -3,9 +3,12 @@
 
     <?php foreach ($marques as $marque): ?>
         <li style="margin-top:30px">
-            <img style="width:50%" src="<?php echo Mage::helper('virtual_marques')->getImageUrl($marque->getImageUrl()); ?>" title="<?php echo $marque->getName(); ?>">
+            <a href="<?php echo $this->helper('virtual_marques/data')->getMarqueUrl($marque); ?>">
+            	<img style="width:50%" src="<?php echo Mage::helper('virtual_marques')->getImageUrl($marque->getImageUrl()); ?>" title="<?php echo $marque->getName(); ?>">
+            </a>
 
         </li>
     <?php endforeach; ?>
 
 </ul>
+
