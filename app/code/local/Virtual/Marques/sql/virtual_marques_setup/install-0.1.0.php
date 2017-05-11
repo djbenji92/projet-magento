@@ -5,7 +5,7 @@ $installer->startSetup();
 
 $marqueTable = $installer->getConnection()
     ->newTable($installer->getTable('virtual_marques/marque'))
-    ->addColumn('entity_id', Varien_Db_Ddl_Table::TYPE_INTEGER, null, array(
+    ->addColumn('marque_id', Varien_Db_Ddl_Table::TYPE_INTEGER, null, array(
         'identity' => true,
         'unsigned' => true,
         'nullable' => false,
