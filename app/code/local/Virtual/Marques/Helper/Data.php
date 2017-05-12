@@ -30,7 +30,7 @@ class Virtual_Marques_Helper_Data extends Mage_Core_Helper_Abstract
 
   public function getProductsByMarque( $idMarque ){
       $connection = Mage::getSingleton('core/resource')->getConnection('core_read');
-      $query      = "Select * from virtual_marques_product where marque_id = ".$idMarque.";";
+      $query      = "Select * from virtual_marques_marque_product where marque_id = ".$idMarque.";";
       $rows       = $connection->fetchAll($query);
       return $rows;
   }

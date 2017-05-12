@@ -10,7 +10,7 @@
 
     <virtual_marques_index_view>
         <reference name="content">
-            <block type="virtual_marques/marques" name="virtual_marques.marques" template="virtual/view.phtml" />
+            <block type="virtual_marques/view" name="virtual_marques.view" template="virtual/view.phtml" />
         </reference>
     </virtual_marques_index_view>
 
