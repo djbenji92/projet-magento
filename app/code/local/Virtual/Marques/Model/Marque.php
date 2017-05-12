@@ -55,4 +55,5 @@ class Virtual_Marques_Model_Marque extends Mage_Core_Model_Abstract
         return $this->setUrlKey(Mage::getModel('catalog/product_url')->formatUrlKey($this->getName()));
     }
 
+   
 }

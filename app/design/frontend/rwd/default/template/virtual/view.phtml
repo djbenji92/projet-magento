@@ -9,11 +9,16 @@
 	    <?php foreach ($productsAssociated as $asso): ?>
 	    	<?php $idProduct = $asso["product_id"]; ?>
 	    	<?php $product = $product = Mage::getModel('catalog/product')->load($idProduct); ?>
-        <div style="margin-top:10px; margin-bottom:10px;">
-  	    	<img src="<?php echo Mage::getBaseUrl().'media/catalog/product'.$product->getImage(); ?>" >
-  	    	<h2><?php echo $product->getName(); ?></h2>
-  	    	<h3><?php echo round($product->getPrice(),2) . 'euros'; ?></h3>
-  	    	<a href="<?php echo Mage::getBaseUrl().$product->getUrlPath(); ?>" class="button">Acheter</a>
+        <div style="margin-top:10px; margin-bottom:10px; display:flex; flex-direction:row;">
+  	    	<div style="width:50%">
+  	    		<img style="width:50%" src="<?php echo 'http://127.0.0.1/magento/media/catalog/product'.$product->getImage(); ?>" >
+  	    	</div>
+  	    	<div style="width:50%; float:left">
+  	    		<h2><?php echo $product->getName(); ?></h2>
+	  	    	<h3><?php echo round($product->getPrice(),2) . 'euros'; ?></h3>
+	  	    	<a href="<?php echo Mage::getBaseUrl().$product->getUrlPath(); ?>" class="button">Acheter</a>
+  	    	</div>
+  	    	
         </div>
         <hr>
       <?php endforeach; ?>
