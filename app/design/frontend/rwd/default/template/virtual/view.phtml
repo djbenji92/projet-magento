@@ -1,12 +1,10 @@
 <?php $marque = $this->getCurrentMarque(); ?>
 
-
-
-<?php if($marque): ?>
+<?php if($marque->getName()): ?>
   <h1>Produits <?php echo $marque->getName(); ?> :</h1>
 
 	<?php $productsAssociated = Mage::Helper("virtual_marques")->getProductsByMarque($marque->getId()); ?>
-	    <?php foreach ($productsAssociated as $asso): ?>
+      <?php foreach ($productsAssociated as $asso): ?>
 	    	<?php $idProduct = $asso["product_id"]; ?>
 	    	<?php $product = $product = Mage::getModel('catalog/product')->load($idProduct); ?>
         <div style="margin-top:10px; margin-bottom:10px; display:flex; flex-direction:row;">
@@ -22,4 +20,7 @@
         </div>
         <hr>
       <?php endforeach; ?>
+<?php else: ?>
+  <h1>Ce produit n'existe pas</h1>
+
 <?php endif; ?>
