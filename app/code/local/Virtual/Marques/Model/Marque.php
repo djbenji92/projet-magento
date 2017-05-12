@@ -33,6 +33,22 @@ class Virtual_Marques_Model_Marque extends Mage_Core_Model_Abstract
         return parent::_afterSave();
     }
 
+    /**
+     * Perform actions before object save
+     *
+     * @param Varien_Object $object
+     * @return Mage_Core_Model_Resource_Db_Abstract
+     */
+    protected function _beforeSave()
+    {
+        $urlKey = Mage::getModel('catalog/product_url')->formatUrlKey($this->getName());
+        $this->setUrlKey($urlKey);
+
+        return $this;
+    }
+
+
+
     public function getSelectedProducts(){
         if (!$this->hasSelectedProducts()) {
             $products = array();
@@ -44,7 +60,7 @@ class Virtual_Marques_Model_Marque extends Mage_Core_Model_Abstract
         return $this->getData('selected_products');
     }
 
-    
+
     public function getSelectedProductsCollection(){
         $collection = $this->getProductInstance()->getProductCollection($this);
         return $collection;
@@ -55,5 +71,5 @@ class Virtual_Marques_Model_Marque extends Mage_Core_Model_Abstract
         return $this->setUrlKey(Mage::getModel('catalog/product_url')->formatUrlKey($this->getName()));
     }
 
-   
+
 }

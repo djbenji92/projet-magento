@@ -11,4 +11,5 @@ class Virtual_Marques_Block_Adminhtml_Marque extends Mage_Adminhtml_Block_Widget
         $this->_addButtonLabel = Mage::helper('virtual_marques')->__('Add Marque');
         parent::__construct();
     }
+
 }
