@@ -41,12 +41,34 @@ class Virtual_Marques_Model_Marque extends Mage_Core_Model_Abstract
      */
     protected function _beforeSave()
     {
+      /*  $setUrlKey = Mage::tt->ee($object->getName());
+        $this->checkIfExists($urlKey, $object->getId());
+        $object->setUrlKey();*/
+
         $urlKey = Mage::getModel('catalog/product_url')->formatUrlKey($this->getName());
+        $this->checkIfExists($urlKey, $this->getId());
         $this->setUrlKey($urlKey);
 
         return $this;
     }
 
+    protected function checkIfExists($urlKey, $id){
+      if($id){
+        $connection = Mage::getSingleton('core/resource')->getConnection('core_read');
+        $query      = "Select * from virtual_marques_marque where entity_id <> '".$id."' and url_key = '".$urlKey."';";
+        $rows       = $connection->fetchAll($query);
+      } else {
+        $connection = Mage::getSingleton('core/resource')->getConnection('core_read');
+        $query      = "Select * from virtual_marques_marque where url_key = '".$urlKey."';";
+        $rows       = $connection->fetchAll($query);
+      }
+
+
+      if($rows){
+        throw new Exception('Slug déjà existant');
+      }
+      return $this;
+    }
 
 
     public function getSelectedProducts(){
